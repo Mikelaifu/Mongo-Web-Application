@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Mission to Mars</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body>
+  <div class="container">
+
+    <div class="jumbotron text-center">
+      <h1>Mission to Mars</h1>
+      <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape New Date</a></p>
+    </div>
+
+    <div class="row" id="Mission-Mars">
+      <div class="col-md-12">
+
+          <h2 class="heading">Latest Mars News</h2>
+          <h4 class="heading">{{ mars_data["MarsNews_title"]['Title']}} </h4>
+          <h5 class="heading">{{mars_data['MarsNews_paragraph']['Paragraph']}} </h5>
+      
+    </div>
+  </div>  
+  <div class="row" id="Mission-Mars">
+      <div class="col-md-8">
+        <h2 class="heading">Featured Mars Image</h2>
+        <img src={{mars_data.Mars_image.featured_image_url}} height="600" hspace="5" vspace="10">
+  </div>
+
+  
+  <div class="col-md-4">
+      <h2 class="heading">Current Weather on Mars</h2>
+      <h4 class="heading">{{mars_data["mars_weather"]['lastest_tweet']}} </h4>
+      <br>
+      <h3 class="heading">Mars Facts</h3>   
+      {{mars_data["Mars_fact_table"]["Fact_table"]|safe}}   
+    </div>
+  </div>
+  
+  <div class="row" id="Mission-Mars">
+      <div class="text-center">
+        <h3 class="heading">Mars Hemispheres</h3>
+  </div>
+  </div>
+
+  <div class="row" id="Mission-Mars">
+      <div class="col-md-6">
+      <div class="text-center">
+       <img src={{mars_data.Hemisphere_list[0].image_url}} width="500" height="500" hspace="5" vspace="10">
+       <p> {{mars_data["Hemisphere_list"][0]["title"]}} </p>
+       <br>
+
+      <img src={{mars_data.Hemisphere_list[1].image_url}} width="500" height="500" hspace="5" vspace="10">
+       <p> {{mars_data["Hemisphere_list"][1]["title"]}} </p>
+
+    </div>
+</div>
+
+<div class="col-md-6">
+    <div class="text-center">
+     <img src={{mars_data.Hemisphere_list[2].image_url}} width="500" height="500" hspace="5" vspace="10">
+     <p> {{mars_data["Hemisphere_list"][2]["title"]}} </p>
+     <br>
+
+    <img src={{mars_data.Hemisphere_list[3].image_url}} width="500" height="500" hspace="5" vspace="10">
+     <p> {{mars_data["Hemisphere_list"][3]["title"]}} </p>
+
+</div>
+
+</div>
+<br>
+<br>
+<br>
+  <br>
+</body>
+
+</html>
+
