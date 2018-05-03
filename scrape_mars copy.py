@@ -133,7 +133,7 @@ def scrap_hemisphereInfo():
         browser = Browser('chrome', headless=False)
         url = branch_links[i]
         browser.visit(url)
-        full_image_link = browser.find_link_by_text("Original")
+        full_image_link = browser.find_link_by_text("Sample")
         image_link = full_image_link['href']
         dictt['title'] = titles[i]
         dictt['image_url'] = image_link
